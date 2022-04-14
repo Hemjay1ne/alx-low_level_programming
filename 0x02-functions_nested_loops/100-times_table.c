@@ -1,44 +1,34 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
-   * print_times_table - Prints the times table of the input,
-    *                     starting with 0.
-     * @n: The value of the times table to be printed.
-      */
-void print_times_table(int n)
+   * main - program that prints all possible different combinations of two digits
+    * Numbers must be separated by ,followed by a space
+     * The two digits must be different
+      * 01 and 10 are considered the same combination of the two digits 0 and 1
+       * Return: 0
+        */
+
+int main(void)
 {
-		int num, mult, prod;
-
-			if (n >= 0 && n <= 15)
-					{
-								for (num = 0; num <= n; num++)
-											{
-															_putchar('0');
-
-																		for (mult = 1; mult <= n; mult++)
-																						{
-																											_putchar(',');
-																															_putchar(' ');
-
-																																			prod = num * mult;
-
-																																							if (prod <= 99)
-																																													_putchar(' ');
-																																											if (prod <= 9)
-																																																	_putchar(' ');
-
-																																															if (prod >= 100)
-																																																				{
-																																																										_putchar((prod / 100) + '0');
-																																																															_putchar(((prod / 10)) % 10 + '0');
-																																																																			}
-																																																			else if (prod <= 99 && prod >= 10)
-																																																								{
-																																																														_putchar((prod / 10) + '0');
-																																																																		}
-																																																							_putchar((prod % 10) + '0');
-																																																										}
-																					_putchar('\n');
-																							}
-									}
+	int n1 = 48;
+	int n2;
+	int com = 44;
+	while (n1 <= 57)
+	{
+		n2 = n1 + 1;
+		while (n2 <= 57)
+		{
+			putchar(n1);
+			putchar(n2);
+			if (n1 != 56 || n2 != 57)
+			{
+				putchar(com);
+				putchar(32);
+			}
+			n2 += 1;
+		}
+		n1 += 1;
+	}
+	putchar('\n');
+	return (0);
 }
